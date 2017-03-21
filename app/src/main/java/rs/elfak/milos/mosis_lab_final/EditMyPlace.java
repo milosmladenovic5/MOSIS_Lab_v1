@@ -114,8 +114,18 @@ public class EditMyPlace extends AppCompatActivity implements View.OnClickListen
                 EditText descName = (EditText)findViewById(R.id.editmyplace_desc_edit);
                 String descr =  descName.getText().toString();
 
-                MyPlace place = new MyPlace(nme,descr);
-                MyPlacesData.getInstance().AddNewPlace(place);
+                if(!editMode)
+                {
+                    MyPlace place = new MyPlace(nme,descr);
+                    MyPlacesData.getInstance().AddNewPlace(place);
+                }
+                else
+                {
+                    MyPlace place =  MyPlacesData.getInstance().getPlace(position);
+                    place.setName(nme);
+                    place.setDescription(descr);
+                }
+                
                 setResult(Activity.RESULT_OK);
                 finish();
                 break;

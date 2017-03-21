@@ -32,8 +32,10 @@
         android:id="@+id/elfak_image_view"
 
         android:src="@drawable/elfak"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/app_logo_image_view"
+        android:layout_alignStart="@+id/app_logo_image_view"
+        android:layout_marginBottom="128dp" />
 
 
 </RelativeLayout>
