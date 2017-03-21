@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">MOSIS_Lab_Final</string>
+    <string name="app_name">My Places</string>
+    <string name="show_map">Show map</string>
+    <string name="new_place">New place</string>
+    <string name="my_places_list">My places list</string>
+    <string name="about">About</string>
+    <string name="about_text">
+        <b>My places</b> is an application that helps you to keep track of your favorite places.
+    </string>
+    <string name="ok">OK</string>
+    <string name="editmyplace_name_label">Edit my place name</string>
+    <string name="editmyplace_description_label">Edit my place description</string>
+    <string name="finish_label">Add</string>
+    <string name="cancel_label">Cancel</string>
+    <string name="viewmyplace_finished_label">OK</string>
 </resources>
+
+

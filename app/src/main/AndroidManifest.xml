@@ -2,19 +2,38 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="rs.elfak.milos.mosis_lab_final">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+            <activity android:name=".MainActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+            <activity
+                android:name=".About"
+                android:label="About"
+                android:theme="@style/Theme.AppCompat.Light.Dialog" />
+            <activity
+                android:name=".MyPlacesList"
+                android:label="MyPlacesList"
+                android:parentActivityName=".MainActivity" />
+            <activity
+                android:name=".EditMyPlace"
+                android:label="Edit my Place"
+                android:parentActivityName=".MainActivity" />
 
-</manifest>
+            <activity android:name=".ViewMyPlaceActivity"
+                android:label="View my place"
+                android:parentActivityName=".MainActivity">
+            </activity>
+
+
+        </application>
+
+    </manifest>
