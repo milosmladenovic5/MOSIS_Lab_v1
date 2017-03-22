@@ -6,6 +6,10 @@ package rs.elfak.milos.mosis_lab_final;
 public class MyPlace {
     String name;
     String description;
+    String longitude;
+    String latitude;
+    long ID;
+
 
     public MyPlace (String nme, String descr)
     {
@@ -25,6 +29,30 @@ public class MyPlace {
     public String getDescription()
     {
         return description;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public long getID() {
+        return ID;
+    }
+
+    public void setID(long ID) {
+        this.ID = ID;
     }
 
     public void setName(String nme){
