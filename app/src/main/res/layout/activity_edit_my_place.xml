@@ -30,6 +30,27 @@
         android:layout_height="wrap_content"
         android:id="@+id/editmyplace_desc_edit"/>
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/editmyplace_lat_label"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editmyplace_lat_edit"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/editmyplace_long_label"/>
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editmyplace_long_edit"/>
+
+
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">

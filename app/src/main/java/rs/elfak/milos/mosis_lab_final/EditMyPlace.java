@@ -111,12 +111,22 @@ public class EditMyPlace extends AppCompatActivity implements View.OnClickListen
             case R.id.editmyplace_finished_button:
                 EditText etName = (EditText)findViewById(R.id.editmyplace_name_edit);
                 String nme = etName.getText().toString();
+
                 EditText descName = (EditText)findViewById(R.id.editmyplace_desc_edit);
                 String descr =  descName.getText().toString();
+
+                EditText latName = (EditText) findViewById(R.id.editmyplace_lat_edit);
+                String latitude = latName.getText().toString();
+
+                EditText longName = (EditText) findViewById(R.id.editmyplace_long_edit);
+                String longitude = longName.getText().toString();
+
 
                 if(!editMode)
                 {
                     MyPlace place = new MyPlace(nme,descr);
+                    place.setLongitude(longitude);
+                    place.setLatitude(latitude);
                     MyPlacesData.getInstance().AddNewPlace(place);
                 }
                 else
@@ -124,6 +134,9 @@ public class EditMyPlace extends AppCompatActivity implements View.OnClickListen
                     MyPlace place =  MyPlacesData.getInstance().getPlace(position);
                     place.setName(nme);
                     place.setDescription(descr);
+                    place.setLatitude(latitude);
+                    place.setLongitude(longitude);
+                    MyPlacesData.getInstance().updatePlace(place);
                 }
                 
                 setResult(Activity.RESULT_OK);

@@ -96,10 +96,58 @@ public class MyPlacesDBAdapter {
             while (cursor.moveToNext()) {
                 myPlace = new MyPlace(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_NAME)));
                 myPlace.setID(cursor.getLong(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_ID)));
+                myPlace.setDescription(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_DESCRIPTION)));
+                myPlace.setLongitude(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_LONG)));
+                myPlace.setLatitude(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_LAT)));
 
-
+                myPlaces.add(myPlace);
             }
         }
         return myPlaces;
     }
+
+
+
+    public MyPlace getEntry(int id) {
+        MyPlace myPlace = null;
+        Cursor cursor = null;
+        db.beginTransaction();
+
+        try {
+
+        } catch (SQLiteException e) {
+            Log.v("MyPlacesDBAdapter", e.getMessage());
+        } finally {
+            db.endTransaction();
+        }
+
+        if (cursor != null)
+        {
+            if(cursor.moveToFirst())
+            {
+                myPlace = new MyPlace(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_NAME)));
+                myPlace.setID(cursor.getLong(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_ID)));
+                myPlace.setDescription(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_DESCRIPTION)));
+                myPlace.setLongitude(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_LONG)));
+                myPlace.setLatitude(cursor.getString(cursor.getColumnIndex(MyPlacesDBAdapter.PLACE_LAT)));
+            }
+        }
+        return myPlace;
+    }
+
+    public int updateEntry ( long id, MyPlace myPlace)
+    {
+        String where = PLACE_ID + "=" + id;
+
+        ContentValues contentValues  = new ContentValues();
+
+        contentValues.put(PLACE_NAME, myPlace.getName());
+        contentValues.put(PLACE_DESCRIPTION, myPlace.getDescription());
+        contentValues.put(PLACE_LONG, myPlace.getLongitude());
+        contentValues.put(PLACE_LAT, myPlace.getLatitude());
+
+        return db.update(DATABASE_TABLE, contentValues,where, null);
+    }
+
+
 }

@@ -13,6 +13,8 @@
     <string name="finish_label">Add</string>
     <string name="cancel_label">Cancel</string>
     <string name="viewmyplace_finished_label">OK</string>
+    <string name="editmyplace_long_label">Longitude</string>
+    <string name="editmyplace_lat_label">Latitude</string>
 </resources>
 
 

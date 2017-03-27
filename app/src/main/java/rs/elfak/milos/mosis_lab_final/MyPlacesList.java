@@ -75,9 +75,8 @@ public class MyPlacesList extends AppCompatActivity {
         }
         else if(item.getItemId()==3)
         {
-            MyPlacesData.getInstance().DeletePlace(info.position);
-            finish();
-            startActivity(getIntent());
+            MyPlacesData.getInstance().deletePlace(info.position);
+            setList();
         }
         return super.onContextItemSelected(item);
     }
@@ -117,4 +116,11 @@ public class MyPlacesList extends AppCompatActivity {
             myPlacesList.setAdapter(new ArrayAdapter<MyPlace>(this, android.R.layout.simple_list_item_1,MyPlacesData.getInstance().getMyPlaces()));
         }
     }
+
+    public void setList()
+    {
+        ListView myPlacesList  = (ListView) findViewById(R.id.my_places_list);
+        myPlacesList.setAdapter(new ArrayAdapter<MyPlace>(this,android.R.layout.simple_list_item_1, MyPlacesData.getInstance().getMyPlaces()));
+    }
+
 }
