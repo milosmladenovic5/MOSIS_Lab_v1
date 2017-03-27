@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(id==R.id.show_map_item)
-            Toast.makeText(this,"Show map!", Toast.LENGTH_SHORT);
+        if(id==R.id.show_map_item) {
+            Toast.makeText(this, "Show map!", Toast.LENGTH_LONG).show();
+        }
         else if (id==R.id.about_item) {
            Intent i = new Intent(this,About.class);
             startActivity(i);
